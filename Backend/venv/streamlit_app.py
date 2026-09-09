@@ -32,7 +32,7 @@ if user_query := st.chat_input("Ex: How many patients have Diabetes?"):
                 else:
                     bot_response = f"Error ({response.status_code}): Could not fetch response from backend."
             except Exception as e:
-                bot_response = f"Connection Error: Make sure FastAPI backend is running. Details: {str(e)}"
+                bot_response = f"Connection Error: {str(e)}"
             
             st.markdown(bot_response)
             st.session_state.messages.append({"role": "assistant", "content": bot_response})
