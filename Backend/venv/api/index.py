@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-app = FastAPI()
+app = FastAPI(title="Hospital AI Agent")
 
 @app.get("/")
 def read_root():
-    return {"message": "Hospital AI Agent API is Running"}
+    return {"status": "online", "message": "Hospital AI Agent API is running"}
